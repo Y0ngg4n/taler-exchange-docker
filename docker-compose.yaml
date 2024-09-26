@@ -1,0 +1,20 @@
+services:
+  exchange:
+    build:
+      context: .
+    volumes:
+      - ./taler.conf:/etc/taler/taler.conf:ro
+      - ./exchange-db.secret.conf:/etc/taler/secrets/exchange-db.secret.conf:ro
+      - ./taler.conf.d:/etc/taler/taler.conf.d
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=taler
+      - POSTGRES_USER=taler
+      - POSTGRES_DB=taler
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+
+
+
+
