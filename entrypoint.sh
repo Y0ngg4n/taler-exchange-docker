@@ -8,4 +8,5 @@ sudo -u taler-exchange-httpd taler-exchange-dbinit
 /usr/bin/taler-exchange-closer -c /etc/taler/taler.conf -L INFO &
 /usr/bin/taler-exchange-wirewatch -c /etc/taler/taler.conf -L INFO &
 /usr/bin/taler-exchange-transfer -c /etc/taler/taler.conf -L INFO &
+/usr/sbin/nginx
 /bin/tail -f /dev/null

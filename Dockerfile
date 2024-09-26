@@ -7,7 +7,7 @@ WORKDIR /app
 #RUN tar -xvzf taler-exchange-latest.tar.gz && tar -xvzf gnunet-latest.tar.gz && rm gnunet-latest.tar.gz
 #RUN cd gnunet-* &&  ./configure  --prefix=/usr/local --disable-documentation && make && make install
 #RUN cd taler-exchange-* && ./configure && make && make install
-RUN apt-get update && apt-get install wget postgresql-client sudo -y
+RUN apt-get update && apt-get install wget postgresql-client sudo nginx -y
 RUN echo "deb [signed-by=/etc/apt/keyrings/taler-systems.gpg] https://deb.taler.net/apt/debian bookworm main" > /etc/apt/sources.list.d/taler.list
 RUN wget -O /etc/apt/keyrings/taler-systems.gpg https://taler.net/taler-systems.gpg
 RUN apt-get update && apt install -y taler-exchange taler-exchange-offline taler-wallet-cli
