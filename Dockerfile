@@ -12,5 +12,5 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/taler-systems.gpg] https://deb.taler.
 RUN wget -O /etc/apt/keyrings/taler-systems.gpg https://taler.net/taler-systems.gpg
 RUN apt-get update && apt install -y taler-exchange taler-exchange-offline taler-wallet-cli
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh && ln -s /etc/nginx/sites-available/taler-exchange /etc/nginx/sites-enabled/taler-exchange
 ENTRYPOINT /entrypoint.sh
