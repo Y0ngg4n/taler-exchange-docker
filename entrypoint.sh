@@ -1,5 +1,5 @@
 #!/bin/bash
-/usr/local/bin/taler-exchange-dbinit &
+/usr/local/bin/taler-exchange-dbinit -L DEBUG &
 /usr/local/bin/taler-exchange-secmod-rsa -c /etc/taler/taler.conf -L INFO &
 /usr/local/bin/taler-exchange-secmod-cs -c /etc/taler/taler.conf -L INFO &
 /usr/local/bin/taler-exchange-secmod-eddsa -c /etc/taler/taler.conf -L INFO &
